@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/kalu-kalu-lendsqr-dashboard/static/css/main.ae3cb4fe.css",
-    "main.js": "/kalu-kalu-lendsqr-dashboard/static/js/main.53dac831.js",
+    "main.js": "/kalu-kalu-lendsqr-dashboard/static/js/main.40630032.js",
     "static/js/453.997173f7.chunk.js": "/kalu-kalu-lendsqr-dashboard/static/js/453.997173f7.chunk.js",
     "static/media/Union.png": "/kalu-kalu-lendsqr-dashboard/static/media/Union.e5b4a4e00177623f667c.png",
     "static/media/pablo-sign-in.png": "/kalu-kalu-lendsqr-dashboard/static/media/pablo-sign-in.0735899bed53d6b80f6c.png",
     "index.html": "/kalu-kalu-lendsqr-dashboard/index.html",
     "main.ae3cb4fe.css.map": "/kalu-kalu-lendsqr-dashboard/static/css/main.ae3cb4fe.css.map",
-    "main.53dac831.js.map": "/kalu-kalu-lendsqr-dashboard/static/js/main.53dac831.js.map",
+    "main.40630032.js.map": "/kalu-kalu-lendsqr-dashboard/static/js/main.40630032.js.map",
     "453.997173f7.chunk.js.map": "/kalu-kalu-lendsqr-dashboard/static/js/453.997173f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae3cb4fe.css",
-    "static/js/main.53dac831.js"
+    "static/js/main.40630032.js"
   ]
 }
