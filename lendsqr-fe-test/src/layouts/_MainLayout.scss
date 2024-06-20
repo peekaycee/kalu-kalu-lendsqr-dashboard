@@ -1,0 +1,19 @@
+@import '../assets/styles/variables';
+@import '../assets/styles/mixins';
+@import '../assets/styles/globals';
+
+.dashboard__layout-container {
+  @include centerItem;
+    position: relative;
+    display: flex;
+    flex: 1 1 1440px;
+    max-height: 1574px;
+  }
+  
+  .right__column {
+    position: relative;
+    background: $primary-bg-color;
+    width: 100%;
+    max-width: 1440px;
+    height: 1384px;
+  }

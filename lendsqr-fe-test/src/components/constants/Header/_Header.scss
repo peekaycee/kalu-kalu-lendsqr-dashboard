@@ -1,0 +1,165 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/globals';
+
+header {
+  flex: 1 1 1440px;
+  max-width: 1440px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: $primary-shadow;
+  background: $secondary-bg-color;
+
+  .logo {
+    @extend logo !optional;
+    width: 144.8px;
+    height: 30px;
+    margin-left: 30px;
+  }
+
+  .search {
+    @include centerItem;
+    justify-content: space-between;
+    width: fit-content;
+    max-width: 400px;
+    height: 40px;
+    padding: 0;
+
+    .search__input {
+      padding-left: calc($padRightLeft / 2);
+      width: 360px;
+      height: 40px;
+      outline: none;
+      border: 1px solid #213f7d33;
+      border-radius: 8px 0 0 8px;
+
+      &::placeholder {
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: 921px) {
+      .logo {
+        margin-left: -100px;
+      }
+      .search__input {
+        width: 200px;
+      }
+      .input__container {
+        margin-left: calc($marginRightLeft);
+      }
+    }
+    @media (max-width: 480px) {
+      .search__input {
+        width: 140px;
+      }
+      header .search span {
+        width: 30px;
+      }
+    }
+
+    span {
+      @include centerItem;
+      width: 56px;
+      height: 40px;
+      background: $tertiary-text-color;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+
+      .search__button {
+        width: 13.97px;
+        height: 14px;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  @media (max-width: 921px) {
+    .logo {
+      margin-left: 10px;
+    }
+  }
+  .navs {
+    @include centerItem;
+    display: flex;
+    width: 100%;
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin-right: 50px;
+
+    .docs__nav {
+      width: 37px;
+      height: 19px;
+      font-family: $font-family3;
+      font-size: $small;
+      font-weight: $thin;
+      line-height: 18.75px;
+      text-align: left;
+      cursor: pointer;
+      color: $primary-text-color;
+      margin-right: $padRightLeft;
+    }
+    .notify__nav {
+      width: 26px;
+      height: 26px;
+      margin-right: calc($marginRightLeft * 2);
+      cursor: pointer;
+    }
+    .profile__nav {
+      margin-right: calc($marginRightLeft/2);
+      cursor: pointer;
+    }
+    .name__nav {
+      font-family: $font-family2;
+      font-size: $small;
+      font-weight: $regular;
+      line-height: 18.77px;
+      text-align: left;
+      color: $primary-text-color;
+      cursor: pointer;
+    }
+    .dropdown__nav {
+      margin-left: 6px;
+      margin-top: -20px;
+      width: 7.34px;
+      height: 4.15px;
+      vertical-align: middle;
+      color: $primary-text-color;
+      cursor: pointer;
+    }
+
+    @media (max-width: 876px) {
+      .docs__nav {
+        margin-right: 1em;
+      }
+      .notify__nav {
+        margin-right: 2em;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .logo {
+      margin: 15px 0px 45px 20px;
+    }
+    .search {
+      margin-right: $marginRightLeft;
+    }
+    .navs {
+      display: none;
+    }
+  }
+  @media (max-width: 480px) {
+    .logo {
+      margin: 15px 0px 45px 10px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  header .search span {
+    width: 30px;
+  }
+}

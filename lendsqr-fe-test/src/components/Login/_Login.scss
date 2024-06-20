@@ -1,0 +1,221 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/globals';
+
+.login__page-container {
+  background: $primary-bg-color;
+  position: relative;
+  display: flex;
+  flex: 1 1 1440px;
+  height: 900px;
+
+  .logo {
+    @extend logo !optional;
+    margin: 106px 0 0 97px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
+
+  .login__page-image {
+    background: transparent;
+    max-width: 736px;
+    height: 100%;
+    padding: 50px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 20px;
+      margin-bottom: $marginTopBottom;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+    }
+
+    .login__image {
+      @include centerItem;
+      max-width: 600px;
+      height: 337.57px;
+      margin: 139px 0 0 67px;
+
+      @media (max-width: 768px) {
+        margin: 50px auto;
+      }
+
+      @media (max-width: 480px) {
+        margin: 20px auto;
+      }
+
+      .barner {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .login__form-container {
+    background: $secondary-bg-color;
+    flex: 1 1 704px;
+    max-width: 704px;
+    height: 100%;
+    padding: 0 100px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0 50px;
+      margin-bottom: $marginTopBottom;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 20px;
+    }
+
+    .welcome__text {
+      flex: 1 1 447px;
+      max-width: 447px;
+      h1,
+      p {
+        font-family: $font-family1;
+        text-align: left;
+      }
+
+      h1 {
+        width: 183px;
+        height: 55px;
+        margin-top: 215px;
+        font-size: $xlarge;
+        font-weight: 700;
+        line-height: 54.64px;
+        letter-spacing: -0.04em;
+        color: $primary-text-color;
+
+        @media (max-width: 768px) {
+          margin-top: 100px;
+        }
+
+        @media (max-width: 480px) {
+          margin-top: 100px;
+        }
+      }
+
+      p {
+        width: 194px;
+        height: 28px;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: $thin;
+        line-height: 27.32px;
+
+        @media (max-width: 768px) {
+          margin-top: 5px;
+        }
+
+        @media (max-width: 480px) {
+          margin-top: 3px;
+        }
+      }
+    }
+
+    .form {
+      flex: 1 1 447px;
+      max-width: 447px;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+
+      .input__values {
+        position: relative;
+        margin-top: 60px;
+        height: auto;
+
+        @media (max-width: 768px) {
+          margin-top: 40px;
+        }
+
+        @media (max-width: 480px) {
+          margin-top: 20px;
+        }
+      }
+
+      .input__container {
+        input {
+          width: 100%;
+          height: 50px;
+          margin-bottom: 24px;
+          border-radius: 5px 0 0 0;
+          border: 2px solid #545f7d26;
+          outline: none;
+          padding: 0 10px;
+
+          &::placeholder {
+            font-size: $smaller;
+            line-height: 19.12px;
+            font-family: $font-family1;
+            font-weight: $thin;
+            opacity: 0.6;
+          }
+        }
+      }
+
+      #show__password {
+        position: absolute;
+        bottom: 43px;
+        right: 10px;
+        width: 49.41px;
+        line-height: 12.5px;
+        font-size: $smallest;
+        font-weight: $bold;
+        cursor: pointer;
+        color: $tertiary-text-color;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      p {
+        font-family: $font-family1;
+        font-size: $smallest;
+        font-weight: $bold;
+        line-height: 16.39px;
+        letter-spacing: 0.1em;
+        color: $tertiary-text-color;
+        text-align: left;
+        margin: 0 0 50px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+          letter-spacing: 1.5px;
+        }
+      }
+
+      button {
+        @include button;
+        font-family: $font-family1;
+        font-size: $smaller;
+        font-weight: $bold;
+        line-height: 19.12px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        color: #fff;
+
+        &:hover {
+          opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+          margin-top: 40px;
+          margin-bottom: $marginTopBottom;
+        }
+      }
+    }
+  }
+}

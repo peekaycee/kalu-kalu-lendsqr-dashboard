@@ -1,0 +1,27 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/globals';
+
+.logo {
+    display: flex;
+    flex: 1;
+    max-width: 173.76px;
+    height: 36px;
+
+    @media (max-width: 768px) {
+      margin: 50px auto;
+    }
+
+    @media (max-width: 480px) {
+      margin: 20px auto;
+    }
+
+    .union {
+      width: 24.75px;
+      margin-right: 10px;
+    }
+
+    .lendsqr {
+      width: 138.44px;
+    }
+  }

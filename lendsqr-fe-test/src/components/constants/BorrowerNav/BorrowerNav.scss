@@ -1,0 +1,18 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/globals';
+
+.borrower__nav {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  max-width: 283px;
+  height: auto;
+  height: 400px;
+  z-index: 1;
+  background: $secondary-bg-color;
+  border-radius: 0 0 4px 4px;
+  box-shadow: $primary-shadow;
+}

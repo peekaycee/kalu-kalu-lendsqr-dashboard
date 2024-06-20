@@ -1,0 +1,191 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/globals';
+
+.table-container {
+  width: 100%;
+  height: auto;
+
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-bg-color;
+    box-shadow: $secondary-shadow;
+
+    td,
+    th {
+      border-bottom: 1px solid rgba(220, 58%, 31%, 0.1);
+      padding: 25px 0;
+
+      &:first-child {
+        padding-left: 20px;
+        padding-right: 0px;
+      }
+    }
+
+    td img {
+      @include centerItem;
+      cursor: pointer;
+    }
+
+    tr {
+      text-align: left;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      width: fit-content;
+      height: 16px;
+      font-family: $font-family2;
+      font-size: $smallest;
+      font-weight: $bold;
+      line-height: 14.08px;
+      text-align: left;
+
+      img {
+        width: 16px;
+        height: 10.67px;
+        margin-left: 5px;
+        color: $secondary-text-color;
+        cursor: pointer;
+      }
+
+      &:nth-child(7) {
+        width: 30px;
+
+        img {
+          display: none;
+        }
+      }
+    }
+    .active {
+      text-decoration: underline;
+    }
+
+    .status-active,
+    .status-inactive,
+    .status-pending,
+    .status-blacklisted {
+      padding: 5px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .status-active {
+      @include status-style;
+      background: rgb(57, 205, 98, 0.1);
+      color: #39cd62;
+    }
+
+    .status-inactive {
+      @include status-style;
+      background: rgba(84, 95, 125, 0.1);
+      color: #545f7d;
+    }
+
+    .status-pending {
+      @include status-style;
+      background: rgb(233, 178, 0, 0.1);
+      color: #e9b200;
+    }
+
+    .status-blacklisted {
+      @include status-style;
+      background-color: rgb(228, 3, 59, 0.1);
+      color: #e4033b;
+    }
+  }
+}
+
+.pagination__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  margin-top: 1em;
+  padding-bottom: $padTopBottom;
+
+  .page__statistics {
+    @include centerItem;
+    justify-content: space-between;
+    flex: 1 1 227px;
+    max-width: 227px;
+    height: 30px;
+    color: $secondary-text-color;
+    font-family: $font-family2;
+    font-size: $smaller;
+    font-weight: $thin;
+    line-height: 16.42px;
+    text-align: left;
+
+    img {
+      width: 6.57px;
+      height: 11.21px;
+      color: $primary-text-color;
+    }
+    select {
+      @include centerItem;
+      outline: none;
+      border: 0;
+      width: 80px;
+      height: 30px;
+      font-family: $font-family2;
+      font-size: $thin;
+      font-weight: $regular;
+      line-height: 16.42px;
+      text-align: left;
+      background: rgba(33, 63, 125, 0.1);
+      padding: 0 1em;
+      border-radius: 5px;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: rgba(33, 63, 125, 0.1);
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    img {
+      vertical-align: middle;
+    }
+  }
+  .page__numbers {
+    @include centerItem;
+    justify-content: space-between;
+    width: 262px;
+    height: 24px;
+  }
+
+  .pagination-pages {
+    width: 100%;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .page-number {
+    cursor: pointer;
+
+    &.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}

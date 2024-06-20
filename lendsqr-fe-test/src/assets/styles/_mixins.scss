@@ -1,0 +1,26 @@
+@mixin centerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button {
+  max-width: 447px;
+  padding:  10px;
+  outline: none;
+  border: 0;
+  border-radius: 8px;
+  opacity: 0px;
+  background-color: $tertiary-text-color;
+  cursor: pointer;
+}
+
+@mixin status-style{
+  font-family: $font-family2;
+      font-size: $smaller;
+      font-weight: $thin;
+      line-height: 16.42px;
+      text-align: center;
+}
+
+
