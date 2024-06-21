@@ -9,28 +9,26 @@ import MainLayout from './layouts/MainLayout';
 
 function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path='/' element={<LoginPage />} />
-          <Route path='/dashboard' element={
-            <MainLayout value={true}> 
-              <DashboardPage />
-            </MainLayout>
-          } />
-          <Route path='/users' element={
-            <MainLayout value={true}>
-              <UserPage />
-            </MainLayout>
-          } />
-          <Route path='/users/:id' element={
-            <MainLayout>
-              <UserDetailsPage />
-            </MainLayout>
-          } />
-        </Routes>
-      </Router>
-    </>
+    <Router basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path='/' element={<LoginPage />} />
+        <Route path='/dashboard' element={
+          <MainLayout value={true}>
+            <DashboardPage />
+          </MainLayout>
+        } />
+        <Route path='/users' element={
+          <MainLayout value={false}>
+            <UserPage />
+          </MainLayout>
+        } />
+        <Route path='/users/:id' element={
+          <MainLayout value={false}>
+            <UserDetailsPage />
+          </MainLayout>
+        } />
+      </Routes>
+    </Router>
   );
 }
 
