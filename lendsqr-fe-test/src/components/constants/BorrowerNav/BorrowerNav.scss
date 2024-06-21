@@ -2,17 +2,89 @@
 @import '../../../assets/styles/mixins';
 @import '../../../assets/styles/globals';
 
-.borrower__nav {
+.borrower__container {
   position: absolute;
   top: 0px;
   left: 0;
   bottom: 0;
+  flex: 1 1 283px;
+  height: 1574px;
   width: 25%;
   max-width: 283px;
-  height: auto;
-  height: 400px;
   z-index: 1;
-  background: $secondary-bg-color;
   border-radius: 0 0 4px 4px;
   box-shadow: $primary-shadow;
+  padding-left: 30px;
+
+  // switch organization                      (  RECALL TO USE A MIXIN TO SAVE TIME)
+  .switch__content {
+    flex-direction: column;
+    margin-bottom: 5em;
+
+    .switch {
+      display: flex;
+      margin-top: 39px;
+      margin-bottom: 52px;
+      vertical-align: middle;
+      p {
+        @include borrowers-features;
+        width: 157px;
+        height: 19px;
+      }
+      nav img {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        padding: 1px 0px 1px 0px;
+        cursor: pointer;
+
+        &.dd {
+          width: 14px;
+          height: 14px;
+          margin-left: -5px;
+        }
+      }
+    }
+    nav.dashboard {
+      display: flex;
+      width: 16px;
+      height: 14.22px;
+      margin-bottom: 41px;
+      cursor: pointer;
+
+      p {
+        @include borrowers-features;
+        width: 84px;
+        height: 19px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .borrower__details {
+    margin-bottom: 4em;
+    padding: 0;
+
+    p {
+      @include borrower-details-p;
+    }
+    nav {
+      @include borrower-details-nav;
+
+      img{
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+      }
+      p {
+        width: fit-content;
+        height: 19px;
+        font-family: $font-family2;
+        font-size: $small;
+        font-weight: $thin;
+        line-height: 18.77px;
+        text-align: left;
+      }
+    }
+  }
 }

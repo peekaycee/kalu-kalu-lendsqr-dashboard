@@ -13,12 +13,10 @@ const MainLayout = ({ value, children }: MainLayoutProps) => {
     <main>
       <Header />
       <section className='dashboard__layout-container'>
-        <div className='borrower__nav'>
           <BorrowerNav />
-        </div>
-        <div className='right__column'>
           {children}
-        </div>
+        {/* <div className='right__column'>
+        </div> */}
       </section>
     </main>
   );
