@@ -2,9 +2,10 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/globals';
 
-body{
+body {
   background: $primary-bg-color;
 }
+
 .dashboard__results {
   position: absolute;
   top: 0;
@@ -13,7 +14,7 @@ body{
   flex-direction: column;
   width: 100%;
   max-width: 1037px;
-  height: 1384px ;
+  height: 1384px;
   padding: 0 2em;
   background: $primary-bg-color;
   margin-top: 60px;
@@ -28,13 +29,15 @@ body{
     text-align: left;
     color: $primary-text-color;
   }
+
   .user__cards {
     @include centerItem;
     justify-content: space-between;
+    margin-top: 40px;
   }
+
   .user__card {
     background: $secondary-bg-color;
-    margin-top: 40px;
     flex: 1 1 240px;
     flex-wrap: wrap;
     max-width: 240px;
@@ -42,35 +45,43 @@ body{
     border: $border;
     border-radius: 4px;
     box-shadow: $primary-shadow;
-    padding: 1em 2em;
+    padding: 20px 30px;
+    margin-right: 26px;
   }
-  .icon4,
-  .icon3,
-  .icon2,
-  .icon1 {
+
+  .icons {
     @include centerItem;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-bottom: 1em;
+    margin-bottom: 14px;
 
     &img {
       width: 22px;
       height: 22px;
     }
   }
+
   .icon1 {
+    @extend .icons;
     background: rgba(223, 24, 255, 0.1);
   }
+
   .icon2 {
+    @extend .icons;
     background: rgba(87, 24, 255, 0.1);
   }
+
   .icon3 {
+    @extend .icons;
     background: rgba(245, 95, 68, 0.1);
   }
+
   .icon4 {
+    @extend .icons;
     background: rgba(255, 51, 102, 0.1);
   }
+
   .text4,
   .text3,
   .text2,
@@ -83,7 +94,7 @@ body{
     line-height: 16.42px;
     text-align: left;
     color: $secondary-text-color;
-    margin-bottom: 1em;
+    margin-bottom: 12px;
   }
 
   .value {
@@ -95,17 +106,21 @@ body{
     line-height: 28.15px;
     text-align: left;
     color: $primary-text-color;
+    color: $primary-text-color;
   }
 
   .result__table {
     position: relative;
     max-width: 1037px;
-    height: 200px;
-    margin-top: $marginTopBottom;
+    height: auto;
+    margin-top: 40px;
+    padding: 30px;
     border: $border;
     border-radius: 4px;
     box-shadow: $primary-shadow;
+    background: $secondary-bg-color;
   }
+
   .pagination {
     .page__status {
       @include centerItem;
@@ -166,6 +181,59 @@ body{
         width: 14px;
         height: 14px;
         color: $primary-text-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard__results {
+    left: 0;
+    padding: 0 1em;
+    margin-top: 40px;
+
+    .user__cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .user__card {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard__results {
+    .title {
+      font-size: $regular;
+    }
+
+    .user__cards {
+      margin-top: 20px;
+    }
+
+    .result__table {
+      padding: 20px;
+    }
+
+    .pagination {
+      .page__status,
+      .page__navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        .overall,
+        .showing,
+        .pages {
+          font-size: $smallest;
+        }
+      }
+
+      .page__navigation {
+        margin-top: 10px;
       }
     }
   }

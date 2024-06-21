@@ -20,7 +20,8 @@
   font-size: $smaller;
   font-weight: $thin;
   line-height: 16.42px;
-  text-align: center;
+  text-align: left;
+  color: $secondary-text-color;
 }
 
 @mixin borrowers-features {
@@ -41,12 +42,28 @@
   line-height: 14.08px;
   text-align: left;
   color: #545f7d;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 @mixin borrower-details-nav {
   display: flex;
-  margin: 31px;
+  margin-bottom: 31px;
   cursor: pointer;
-  max-width: 157.87px;
+  text-align: left;
+  flex: 1 1 157.87px;
   height: 19px;
+  padding-left: 30px;
+}
+@mixin borrower-details-nav-img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+@mixin borrower-details-nav-p {
+  width: fit-content;
+  height: 19px;
+  font-family: $font-family2;
+  font-size: $small;
+  font-weight: $thin;
+  line-height: 18.77px;
+  text-align: left;
 }

@@ -14,23 +14,25 @@
   z-index: 1;
   border-radius: 0 0 4px 4px;
   box-shadow: $primary-shadow;
-  padding-left: 30px;
 
-  // switch organization                      (  RECALL TO USE A MIXIN TO SAVE TIME)
+  // switch organization
   .switch__content {
     flex-direction: column;
     margin-bottom: 5em;
+    padding-left: 30px;
 
     .switch {
       display: flex;
       margin-top: 39px;
       margin-bottom: 52px;
       vertical-align: middle;
+
       p {
         @include borrowers-features;
         width: 157px;
         height: 19px;
       }
+
       nav img {
         width: 16px;
         height: 16px;
@@ -45,6 +47,7 @@
         }
       }
     }
+
     nav.dashboard {
       display: flex;
       width: 16px;
@@ -56,34 +59,88 @@
         @include borrowers-features;
         width: 84px;
         height: 19px;
-        margin-left: 10px;
       }
     }
   }
 
   .borrower__details {
+    position: relative;
     margin-bottom: 4em;
-    padding: 0;
+    width: 100%;
+
+    .heading {
+      padding-left: 30px;
+    }
 
     p {
       @include borrower-details-p;
     }
+
     nav {
       @include borrower-details-nav;
 
-      img{
-        width: 16px;
-        height: 16px;
-        margin-right: 10px;
+      img {
+        @include borrower-details-nav-img;
       }
+
       p {
-        width: fit-content;
-        height: 19px;
-        font-family: $font-family2;
-        font-size: $small;
-        font-weight: $thin;
-        line-height: 18.77px;
-        text-align: left;
+        @include borrower-details-nav-p;
+      }
+    }
+  }
+
+  .active {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 28px;
+    background-color: rgba(57, 205, 204, 0.6);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 40px;
+      background: $tertiary-text-color;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .borrower__container {
+    width: 40%;
+    max-width: none;
+
+    .switch__content {
+      padding-left: 20px;
+    }
+
+    .borrower__details {
+      .heading {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .borrower__container {
+    width: 100%;
+    position: static;
+    height: auto;
+
+    .switch__content {
+      padding-left: 10px;
+    }
+
+    .borrower__details {
+      .heading {
+        padding-left: 10px;
       }
     }
   }

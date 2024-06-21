@@ -12,17 +12,11 @@
     width: 100%;
     height: 100%;
     background-color: $secondary-bg-color;
-    box-shadow: $secondary-shadow;
 
     td,
     th {
       border-bottom: 1px solid rgba(220, 58%, 31%, 0.1);
       padding: 25px 0;
-
-      &:first-child {
-        padding-left: 20px;
-        padding-right: 0px;
-      }
     }
 
     td img {
@@ -31,7 +25,9 @@
     }
 
     tr {
-      text-align: left;
+      @include status-style;
+      width: 91px;
+      height: 17px;
 
       &:hover {
         background-color: #ddd;
@@ -57,47 +53,42 @@
         cursor: pointer;
       }
 
-      &:nth-child(7) {
-        width: 30px;
-
-        img {
-          display: none;
-        }
+      &:nth-child(7) img {
+        display: none;
       }
     }
+
     .active {
       text-decoration: underline;
     }
 
-    .status-active,
-    .status-inactive,
-    .status-pending,
-    .status-blacklisted {
+    .status {
+      @include status-style;
       padding: 5px;
       display: inline-block;
       border-radius: 5px;
     }
 
     .status-active {
-      @include status-style;
+      @extend .status;
       background: rgb(57, 205, 98, 0.1);
       color: #39cd62;
     }
 
     .status-inactive {
-      @include status-style;
+      @extend .status;
       background: rgba(84, 95, 125, 0.1);
       color: #545f7d;
     }
 
     .status-pending {
-      @include status-style;
+      @extend .status;
       background: rgb(233, 178, 0, 0.1);
       color: #e9b200;
     }
 
     .status-blacklisted {
-      @include status-style;
+      @extend .status;
       background-color: rgb(228, 3, 59, 0.1);
       color: #e4033b;
     }
@@ -110,8 +101,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
-  margin-top: 1em;
-  padding-bottom: $padTopBottom;
+  margin-top: 20px;
 
   .page__statistics {
     @include centerItem;
@@ -131,6 +121,7 @@
       height: 11.21px;
       color: $primary-text-color;
     }
+
     select {
       @include centerItem;
       outline: none;
@@ -161,10 +152,12 @@
       cursor: not-allowed;
       opacity: 0.5;
     }
+
     img {
       vertical-align: middle;
     }
   }
+
   .page__numbers {
     @include centerItem;
     justify-content: space-between;
@@ -186,6 +179,53 @@
     &.active {
       font-weight: bold;
       text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    table {
+      td,
+      th {
+        padding: 15px 0;
+      }
+    }
+  }
+
+  .pagination__container {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .page__statistics {
+      margin-bottom: 10px;
+    }
+
+    .page__numbers {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .table-container {
+    table {
+      td,
+      th {
+        padding: 10px 0;
+        font-size: $smallest;
+      }
+    }
+  }
+
+  .pagination__container {
+    .page__statistics {
+      font-size: $smallest;
+    }
+
+    .page__numbers {
+      width: 100%;
+      justify-content: space-between;
     }
   }
 }

@@ -15,8 +15,6 @@ const MainLayout = ({ value, children }: MainLayoutProps) => {
       <section className='dashboard__layout-container'>
           <BorrowerNav />
           {children}
-        {/* <div className='right__column'>
-        </div> */}
       </section>
     </main>
   );

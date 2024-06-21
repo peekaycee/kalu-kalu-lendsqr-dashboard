@@ -5,11 +5,7 @@ import {
   Icon2,
   Icon3,
   Icon4,
-  // arrowDown,
-  // backwardArrow,
-  // forwardArrow,
 } from '../../assets/images';
-// import { Link } from 'react-router-dom';
 import Table from '../Table/Table';
 
 const DashboardResults = () => {
@@ -71,7 +67,7 @@ const DashboardResults = () => {
         </div>
       </div>
       <div className='result__table'>
-        <Table />
+          <Table />
       </div>
     </section>
   );
